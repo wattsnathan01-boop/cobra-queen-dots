@@ -40,7 +40,7 @@ Tuned for an **Alienware 15 (Intel Core 7 240H + RTX 5060 Laptop)**. It installs
 open driver, PipeWire with SOF firmware, and sets up the hybrid GPU.
 
 ```sh
-git clone https://github.com/<your-username>/cobra-queen-dots.git ~/cobra-queen-dots
+git clone https://github.com/wattsnathan01-boop/cobra-queen-dots.git ~/cobra-queen-dots
 cd ~/cobra-queen-dots
 bash install.sh
 ```

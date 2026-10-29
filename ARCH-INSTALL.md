@@ -85,7 +85,7 @@ always one F12 away.
 Log in on the text console, connect Wi-Fi with `nmtui`, then:
 
 ```sh
-git clone https://github.com/<your-username>/cobra-queen-dots.git ~/cobra-queen-dots
+git clone https://github.com/wattsnathan01-boop/cobra-queen-dots.git ~/cobra-queen-dots
 cd ~/cobra-queen-dots
 bash install.sh
 reboot
