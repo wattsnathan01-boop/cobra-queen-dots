@@ -12,7 +12,7 @@ A Hyprland setup for Arch Linux. Mint, violet and crimson on near-black, built a
 
 | | |
 |---|---|
-| **WM** | Hyprland 0.53+ with a rotating mint → violet → crimson border and "strike" animations |
+| **WM** | Hyprland 0.57+ (Lua config) with a rotating mint → violet → crimson border and "strike" animations |
 | **Bar** | Waybar, floating, with kanji workspaces 壱 弐 参 肆 伍 陸 |
 | **Launcher** | Rofi, plus a power menu |
 | **Terminal** | Kitty with a 16-colour Cobra palette, and fastfetch with an image logo |
