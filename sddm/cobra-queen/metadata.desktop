@@ -1,0 +1,11 @@
+[SddmGreeterTheme]
+Name=Cobra Queen
+Description=Cobra Queen login theme for the Hyprland rice
+Author=nathan
+Type=sddm-theme
+Version=1.0
+MainScript=Main.qml
+ConfigFile=theme.conf
+Theme-Id=cobra-queen
+Theme-API=2.0
+QtVersion=6

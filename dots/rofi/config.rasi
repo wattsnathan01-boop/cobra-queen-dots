@@ -1,0 +1,15 @@
+configuration {
+    modi: "drun,run,window";
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    display-drun: "drun";
+    display-run: "run";
+    display-window: "win";
+    drun-display-format: "{name}\n<span size='small' foreground='#86a09a'>{generic}</span>";
+    markup-rows: true;
+    hover-select: true;
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+}
+
+@theme "~/.config/rofi/cobra.rasi"

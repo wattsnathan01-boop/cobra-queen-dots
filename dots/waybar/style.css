@@ -1,0 +1,120 @@
+/* ── COBRA QUEEN · waybar ───────────────────────── */
+
+@define-color base     #07090b;
+@define-color surface  rgba(11, 18, 22, 0.88);
+@define-color surface2 rgba(18, 27, 32, 0.80);
+@define-color border   #1f3638;
+@define-color venom    #3bf0b6;
+@define-color scale    #17a68c;
+@define-color toxic    #8a7bff;
+@define-color hood     #ff2d63;
+@define-color fang     #ff4d6d;
+@define-color text     #e6f2ee;
+@define-color muted    #86a09a;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans CJK JP", monospace;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+window#waybar {
+    background: @surface;
+    border: 1px solid @border;
+    border-radius: 14px;
+    color: @text;
+}
+
+tooltip {
+    background: @base;
+    border: 1px solid @border;
+    border-radius: 10px;
+}
+
+/* Shared module pill */
+#cpu, #memory, #temperature, #network, #pulseaudio, #battery,
+#clock, #workspaces, #window, #custom-power {
+    background: @surface2;
+    border-radius: 10px;
+    padding: 0 10px;
+    margin: 7px 0;
+}
+
+#custom-cobra {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #03140f;
+    background: linear-gradient(90deg, @venom, @scale);
+    border-radius: 10px;
+    padding: 0 12px;
+    margin: 7px 0 7px 8px;
+}
+
+/* Workspaces */
+#workspaces { padding: 0 4px; }
+
+#workspaces button {
+    font-weight: 700;
+    color: @muted;
+    background: transparent;
+    border-radius: 7px;
+    padding: 0 8px;
+    margin: 4px 1px;
+    transition: all 0.25s cubic-bezier(0.22, 1.2, 0.36, 1);
+}
+
+#workspaces button:hover {
+    background: rgba(59, 240, 182, 0.12);
+    color: @text;
+}
+
+#workspaces button.active {
+    color: #03140f;
+    background: @venom;
+    min-width: 36px;
+}
+
+#workspaces button.urgent { color: @fang; }
+
+#window {
+    color: @muted;
+    background: transparent;
+    font-size: 12px;
+}
+window#waybar.empty #window { background: transparent; }
+
+/* Clock */
+#clock {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: @venom;
+    border: 1px solid rgba(59, 240, 182, 0.25);
+    padding: 0 16px;
+}
+
+/* Module icon tints */
+#cpu         { color: @venom; }
+#memory      { color: @toxic; }
+#temperature { color: @hood; }
+#network     { color: @venom; }
+#pulseaudio  { color: @text; }
+#battery     { color: @toxic; }
+
+#temperature.critical,
+#battery.critical:not(.charging) { color: @fang; }
+#battery.warning:not(.charging)  { color: @hood; }
+#network.disconnected,
+#pulseaudio.muted                { color: @muted; }
+
+#custom-power {
+    color: @fang;
+    background: rgba(255, 77, 109, 0.13);
+    border: 1px solid rgba(255, 77, 109, 0.33);
+    padding: 0 12px;
+    margin-right: 8px;
+}
+#custom-power:hover { background: rgba(255, 77, 109, 0.25); }

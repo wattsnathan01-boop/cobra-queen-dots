@@ -1,0 +1,89 @@
+// ── COBRA QUEEN · waybar ─────────────────────────
+{
+    "layer": "top",
+    "position": "top",
+    "height": 46,
+    "margin-top": 12,
+    "margin-left": 14,
+    "margin-right": 14,
+    "spacing": 6,
+
+    "modules-left":   ["custom/cobra", "hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right":  ["cpu", "memory", "temperature", "network", "pulseaudio", "battery", "custom/power"],
+
+    "custom/cobra": {
+        "format": " COBRA",
+        "tooltip": false,
+        "on-click": "rofi -show drun"
+    },
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "persistent-workspaces": { "*": 6 },
+        "format-icons": {
+            "1": "壱", "2": "弐", "3": "参",
+            "4": "肆", "5": "伍", "6": "陸",
+            "default": "·"
+        },
+        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1"
+    },
+
+    "hyprland/window": {
+        "format": "  {}",
+        "max-length": 48,
+        "separate-outputs": true
+    },
+
+    "clock": {
+        "format": "{:%H:%M  <span foreground='#86a09a' size='small'>%a %d %b</span>}",
+        "format-alt": "{:%A, %d %B %Y}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "format": {
+                "months":   "<span color='#3bf0b6'><b>{}</b></span>",
+                "weekdays": "<span color='#8a7bff'>{}</span>",
+                "today":    "<span color='#ff2d63'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+
+    "cpu":    { "format": "  {usage}%", "interval": 3 },
+    "memory": { "format": "󰍛  {used:0.1f}G", "interval": 5 },
+
+    "temperature": {
+        "format": "  {temperatureC}°",
+        "critical-threshold": 85
+    },
+
+    "network": {
+        "format-wifi": "󰖩  {essid}",
+        "format-ethernet": "󰈀  wired",
+        "format-disconnected": "󰖪  offline",
+        "tooltip-format": "{ifname} · {ipaddr}",
+        "on-click": "nm-connection-editor"
+    },
+
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "󰝟  muted",
+        "format-icons": { "default": ["󰕿", "󰖀", "󰕾"] },
+        "on-click": "pavucontrol",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+
+    "battery": {
+        "states": { "warning": 25, "critical": 12 },
+        "format": "{icon}  {capacity}%",
+        "format-charging": "󰂄  {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "~/.config/rofi/powermenu.sh"
+    }
+}

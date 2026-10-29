@@ -1,0 +1,103 @@
+/* ── COBRA QUEEN · rofi ─────────────────────────── */
+
+* {
+    base:     #0b1216ee;
+    surface2: #121b20;
+    border:   #1f3638;
+    venom:    #3bf0b6;
+    venomdim: #3bf0b61a;
+    hood:     #ff2d63;
+    text:     #e6f2ee;
+    muted:    #86a09a;
+    ink:      #03140f;
+
+    font: "JetBrainsMono Nerd Font 12";
+    background-color: transparent;
+    text-color: @text;
+}
+
+window {
+    width: 520px;
+    padding: 18px;
+    border: 2px;
+    border-color: @venom;
+    border-radius: 16px;
+    background-color: @base;
+    location: center;
+}
+
+mainbox {
+    spacing: 14px;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    padding: 0 14px;
+    spacing: 10px;
+    border-radius: 10px;
+    background-color: @surface2;
+    children: [ icon-search, entry, mode-switcher ];
+}
+
+icon-search {
+    expand: false;
+    filename: "search";
+    size: 18px;
+    vertical-align: 0.5;
+    text-color: @venom;
+}
+
+entry {
+    padding: 13px 0;
+    placeholder: "search…";
+    placeholder-color: @muted;
+    cursor-color: @venom;
+    vertical-align: 0.5;
+}
+
+mode-switcher { expand: false; spacing: 6px; }
+button {
+    padding: 0 6px;
+    vertical-align: 0.5;
+    text-color: @muted;
+    font: "JetBrainsMono Nerd Font 9";
+}
+button selected { text-color: @hood; }
+
+listview {
+    lines: 6;
+    columns: 1;
+    spacing: 4px;
+    scrollbar: false;
+    fixed-height: true;
+}
+
+element {
+    padding: 10px 14px;
+    spacing: 14px;
+    border: 1px;
+    border-radius: 10px;
+    border-color: transparent;
+}
+
+element selected {
+    background-color: @venomdim;
+    border-color: #3bf0b655;
+}
+
+element-icon {
+    size: 32px;
+    vertical-align: 0.5;
+}
+
+element-text {
+    vertical-align: 0.5;
+    text-color: inherit;
+}
+
+element normal.normal, element alternate.normal { text-color: #b5ccc0; }
+element selected.normal { text-color: @text; }
+element normal.urgent, element selected.urgent { text-color: @hood; }
+
+message { padding: 8px 14px; border-radius: 10px; background-color: @surface2; }
+textbox { text-color: @muted; }
