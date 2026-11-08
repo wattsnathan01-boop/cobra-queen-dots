@@ -7,6 +7,16 @@ suspend="󰒲  suspend"
 reboot="  reboot"
 shutdown="  shut down"
 
+# Under uwsm the session is a systemd service, so stop it properly; otherwise use the
+# Lua dispatcher (Hyprland 0.55+ no longer accepts `hyprctl dispatch exit`)
+log_out() {
+    if command -v uwsm >/dev/null && uwsm check is-active; then
+        uwsm stop
+    else
+        hyprctl dispatch 'hl.dsp.exit()'
+    fi
+}
+
 choice=$(printf '%s\n' "$lock" "$suspend" "$logout" "$reboot" "$shutdown" \
     | rofi -dmenu -i -p "power" \
            -theme ~/.config/rofi/cobra.rasi \
@@ -15,7 +25,7 @@ choice=$(printf '%s\n' "$lock" "$suspend" "$logout" "$reboot" "$shutdown" \
 case "$choice" in
     "$lock")     hyprlock ;;
     "$suspend")  systemctl suspend ;;
-    "$logout")   hyprctl dispatch exit ;;
+    "$logout")   log_out ;;
     "$reboot")   systemctl reboot ;;
     "$shutdown") systemctl poweroff ;;
 esac
