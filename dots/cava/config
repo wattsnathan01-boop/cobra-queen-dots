@@ -1,0 +1,37 @@
+## ── COBRA QUEEN · cava ──────────────────────────
+## Super + A opens this in a floating kitty window
+
+[general]
+framerate = 60
+autosens = 1
+bars = 0
+bar_width = 2
+bar_spacing = 1
+sleep_timer = 5
+
+[input]
+method = pipewire
+source = auto
+
+[output]
+method = noncurses
+orientation = bottom
+channels = stereo
+mono_option = average
+
+[color]
+background = default
+# venom (bottom) → scale → sheen → crimson (peaks)
+gradient = 1
+gradient_count = 6
+gradient_color_1 = '#17a68c'
+gradient_color_2 = '#3bf0b6'
+gradient_color_3 = '#3fd9c0'
+gradient_color_4 = '#8a7bff'
+gradient_color_5 = '#c45cc0'
+gradient_color_6 = '#ff2d63'
+
+[smoothing]
+monstercat = 1
+waves = 0
+noise_reduction = 77

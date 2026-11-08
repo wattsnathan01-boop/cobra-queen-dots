@@ -24,6 +24,7 @@ local fileManager = "thunar"
 local browser     = "google-chrome-stable"
 local menu        = "rofi -show drun"
 local powermenu   = "~/.config/rofi/powermenu.sh"
+local visualizer  = "kitty --class cava -o background_opacity=0.55 -o window_padding_width=12 cava"
 
 -- ── Autostart ────────────────────────────────────
 hl.on("hyprland.start", function()
@@ -145,6 +146,7 @@ hl.bind(mod .. " + P",      hl.dsp.window.pseudo())
 hl.bind(mod .. " + J",      hl.dsp.layout("togglesplit"))
 hl.bind(mod .. " + L",      hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mod .. " + Escape", hl.dsp.exec_cmd(powermenu))
+hl.bind(mod .. " + A",      hl.dsp.exec_cmd(visualizer))
 hl.bind(mod .. " + SHIFT + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -p clip | cliphist decode | wl-copy"))
 
 -- Screenshots
@@ -183,6 +185,7 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"),   { locked = tru
 hl.window_rule({ name = "float-pavucontrol", match = { class = "^(org.pulseaudio.pavucontrol)$" }, float = true })
 hl.window_rule({ name = "float-nm-editor",   match = { class = "^(nm-connection-editor)$" },      float = true })
 hl.window_rule({ name = "float-blueman",     match = { class = "^(blueman-manager)$" },           float = true })
+hl.window_rule({ name = "cava",              match = { class = "^(cava)$" },                      float = true, size = "900 320", center = true })
 hl.window_rule({ name = "pip",               match = { title = "^(Picture-in-Picture)$" },        float = true, pin = true })
 
 hl.layer_rule({ name = "blur-waybar",        match = { namespace = "waybar" },        blur = true, ignore_alpha = 0.2 })

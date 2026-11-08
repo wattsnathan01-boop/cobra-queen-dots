@@ -39,7 +39,7 @@ NET=(networkmanager network-manager-applet bluez bluez-utils blueman linux-firmw
 DESKTOP=(hyprland hyprlock hypridle hyprpaper hyprpolkitagent
          xdg-desktop-portal-hyprland xdg-desktop-portal-gtk qt6-wayland qt5-wayland
          waybar rofi kitty mako fastfetch thunar gvfs
-         brightnessctl playerctl grim slurp wl-clipboard cliphist
+         brightnessctl playerctl cava grim slurp wl-clipboard cliphist
          papirus-icon-theme ttf-jetbrains-mono-nerd noto-fonts noto-fonts-cjk noto-fonts-emoji
          qt6ct nwg-look)
 LOGIN=(sddm xorg-server qt6-declarative qt6-svg)
@@ -86,7 +86,7 @@ fi
 say "Linking configs"
 chmod +x "$DIR/dots/rofi/powermenu.sh"
 mkdir -p "$CONFIG"
-for d in hypr waybar rofi kitty mako fastfetch; do
+for d in hypr waybar rofi kitty mako fastfetch cava; do
     target="$CONFIG/$d"
     if [ -e "$target" ] && [ ! -L "$target" ]; then
         mv "$target" "$target.bak-$STAMP"

@@ -17,6 +17,7 @@ A Hyprland setup for Arch Linux. Mint, violet and crimson on near-black, built a
 | **Launcher** | Rofi, plus a power menu |
 | **Terminal** | Kitty with a 16-colour Cobra palette, and fastfetch with an image logo |
 | **Notifications** | Mako |
+| **Visualizer** | cava, mint → violet → crimson gradient, floating on `Super + A` |
 | **Lock / idle** | hyprlock + hypridle (dim 4m · lock 5m · screen off 6m · suspend 30m) |
 | **Login** | Custom SDDM theme (Qt6) |
 | **Wallpaper** | hyprpaper |
@@ -60,6 +61,7 @@ New Arch install? See [ARCH-INSTALL.md](ARCH-INSTALL.md).
 | `Super + V` | Toggle floating |
 | `Super + L` | Lock |
 | `Super + Esc` | Power menu |
+| `Super + A` | Audio visualizer |
 | `Super + Shift + V` | Clipboard history |
 | `Super + 1–6` | Switch workspace |
 | `Super + Shift + 1–6` | Move window to workspace |
