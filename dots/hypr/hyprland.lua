@@ -34,6 +34,8 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
     hl.exec_cmd("wl-paste --type text  --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
+    -- Cobra assistant (github.com/wattsnathan01-boop/cobra-ai); needs Hyprland's env for hyprctl
+    hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY HYPRLAND_INSTANCE_SIGNATURE XDG_CURRENT_DESKTOP && systemctl --user start cobra")
 end)
 
 -- ── Environment ──────────────────────────────────
