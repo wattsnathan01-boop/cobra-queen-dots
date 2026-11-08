@@ -53,6 +53,20 @@ tooltip {
     margin: 7px 0 7px 8px;
 }
 
+/* Cobra can see the screen */
+#custom-cobra-eye {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: @hood;
+    background: rgba(255, 45, 99, 0.12);
+    border: 1px solid rgba(255, 45, 99, 0.55);
+    border-radius: 10px;
+    padding: 0 12px;
+    margin: 7px 0;
+}
+#custom-cobra-eye.off { padding: 0; margin: 0; border: none; background: none; }
+
 /* Workspaces */
 #workspaces { padding: 0 4px; }
 

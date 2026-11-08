@@ -10,12 +10,19 @@
 
     "modules-left":   ["custom/cobra", "hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right":  ["cpu", "memory", "temperature", "network", "pulseaudio", "battery", "custom/power"],
+    "modules-right":  ["custom/cobra-eye", "cpu", "memory", "temperature", "network", "pulseaudio", "battery", "custom/power"],
 
     "custom/cobra": {
         "format": " COBRA",
         "tooltip": false,
         "on-click": "rofi -show drun"
+    },
+
+    // shows only while Cobra can see your screen
+    "custom/cobra-eye": {
+        "exec": "~/.local/bin/cobractl eye",
+        "return-type": "json",
+        "on-click": "~/.local/bin/cobractl screen stop"
     },
 
     "hyprland/workspaces": {
@@ -26,8 +33,8 @@
             "4": "肆", "5": "伍", "6": "陸",
             "default": "·"
         },
-        "on-scroll-up": "hyprctl dispatch workspace e-1",
-        "on-scroll-down": "hyprctl dispatch workspace e+1"
+        "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e-1\" })'",
+        "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"e+1\" })'"
     },
 
     "hyprland/window": {

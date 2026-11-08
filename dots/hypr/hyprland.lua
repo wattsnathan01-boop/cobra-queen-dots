@@ -37,6 +37,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
     -- Cobra assistant (github.com/wattsnathan01-boop/cobra-ai); needs Hyprland's env for hyprctl
     hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY HYPRLAND_INSTANCE_SIGNATURE XDG_CURRENT_DESKTOP && systemctl --user start cobra")
+    hl.exec_cmd("qs -n -c cobra")
 end)
 
 -- ── Environment ──────────────────────────────────
@@ -149,6 +150,12 @@ hl.bind(mod .. " + Escape", hl.dsp.exec_cmd(powermenu))
 hl.bind(mod .. " + A",      hl.dsp.exec_cmd(visualizer))
 hl.bind(mod .. " + SHIFT + V", hl.dsp.exec_cmd("cliphist list | rofi -dmenu -p clip | cliphist decode | wl-copy"))
 
+-- Cobra: hold to talk
+hl.bind(mod .. " + C", hl.dsp.exec_cmd("~/.local/bin/cobractl listen start"))
+hl.bind(mod .. " + C", hl.dsp.exec_cmd("~/.local/bin/cobractl listen stop"), { release = true })
+-- Cobra: full HUD
+hl.bind(mod .. " + SHIFT + C", hl.dsp.exec_cmd("~/.local/bin/cobractl hud"))
+
 -- Screenshots
 hl.bind("Print",         hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy'))
 hl.bind("SHIFT + Print", hl.dsp.exec_cmd("grim - | wl-copy"))
@@ -187,7 +194,10 @@ hl.window_rule({ name = "float-nm-editor",   match = { class = "^(nm-connection-
 hl.window_rule({ name = "float-blueman",     match = { class = "^(blueman-manager)$" },           float = true })
 hl.window_rule({ name = "cava",              match = { class = "^(cava)$" },                      float = true, size = "900 320", center = true })
 hl.window_rule({ name = "pip",               match = { title = "^(Picture-in-Picture)$" },        float = true, pin = true })
+hl.window_rule({ name = "cobra-settings",    match = { title = "^(Cobra settings)$" },            float = true, size = "1400 880", center = true })
 
 hl.layer_rule({ name = "blur-waybar",        match = { namespace = "waybar" },        blur = true, ignore_alpha = 0.2 })
 hl.layer_rule({ name = "blur-rofi",          match = { namespace = "rofi" },          blur = true, ignore_alpha = 0.2 })
 hl.layer_rule({ name = "blur-notifications", match = { namespace = "notifications" }, blur = true, ignore_alpha = 0.2 })
+hl.layer_rule({ name = "blur-cobra",         match = { namespace = "cobra" },         blur = true, ignore_alpha = 0.2 })
+hl.layer_rule({ name = "blur-cobra-hud",     match = { namespace = "cobra-hud" },     blur = true })
