@@ -5,7 +5,7 @@ configuration {
     display-drun: "drun";
     display-run: "run";
     display-window: "win";
-    drun-display-format: "{name}\n<span size='small' foreground='#86a09a'>{generic}</span>";
+    drun-display-format: "{name}  <span size='small' foreground='#86a09a'>{generic}</span>";
     markup-rows: true;
     hover-select: true;
     me-select-entry: "";

@@ -22,7 +22,7 @@
         { "type": "icons",    "key": "icons ", "keyColor": "red"     },
         { "type": "font",     "key": "font  ", "keyColor": "green"   },
         { "type": "cpu",      "key": "cpu   ", "keyColor": "magenta" },
-        { "type": "gpu",      "key": "gpu   ", "keyColor": "red"     },
+        { "type": "gpu",      "key": "gpu   ", "keyColor": "red", "format": "{name}" },
         { "type": "memory",   "key": "mem   ", "keyColor": "green"   },
         "break",
         "colors"

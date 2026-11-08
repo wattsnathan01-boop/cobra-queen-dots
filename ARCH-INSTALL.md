@@ -97,5 +97,5 @@ You'll land on the Cobra Queen login screen.
 
 - **Black screen after login:** press `Ctrl+Alt+F3`, log in, run `journalctl -b -p err`.
 - **No sound:** `wpctl status`. If no sink is listed, check `sof-firmware` is installed and reboot.
-- **External monitor blank:** uncomment the NVIDIA env block in `~/.config/hypr/hyprland.conf`.
+- **External monitor blank:** uncomment the NVIDIA env block in `~/.config/hypr/hyprland.lua`.
 - **Red error bar in Hyprland:** a config line uses old syntax. Copy the message and fix that line.
