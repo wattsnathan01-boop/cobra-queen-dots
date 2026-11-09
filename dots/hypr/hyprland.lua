@@ -155,6 +155,7 @@ hl.bind(mod .. " + C", hl.dsp.exec_cmd("~/.local/bin/cobractl listen start"))
 hl.bind(mod .. " + C", hl.dsp.exec_cmd("~/.local/bin/cobractl listen stop"), { release = true })
 -- Cobra: full HUD
 hl.bind(mod .. " + SHIFT + C", hl.dsp.exec_cmd("~/.local/bin/cobractl hud"))
+hl.bind(mod .. " + N", hl.dsp.exec_cmd("~/.local/bin/cobractl notebook"))
 
 -- Screenshots
 hl.bind("Print",         hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy'))
@@ -195,6 +196,7 @@ hl.window_rule({ name = "float-blueman",     match = { class = "^(blueman-manage
 hl.window_rule({ name = "cava",              match = { class = "^(cava)$" },                      float = true, size = "900 320", center = true })
 hl.window_rule({ name = "pip",               match = { title = "^(Picture-in-Picture)$" },        float = true, pin = true })
 hl.window_rule({ name = "cobra-settings",    match = { title = "^(Cobra settings)$" },            float = true, size = "1400 880", center = true })
+hl.window_rule({ name = "cobra-notebook",    match = { title = "^(Cobra notebook)$" },            float = true, size = "1440 900", center = true })
 
 hl.layer_rule({ name = "blur-waybar",        match = { namespace = "waybar" },        blur = true, ignore_alpha = 0.2 })
 hl.layer_rule({ name = "blur-rofi",          match = { namespace = "rofi" },          blur = true, ignore_alpha = 0.2 })
